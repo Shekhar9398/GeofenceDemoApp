@@ -31,12 +31,12 @@ struct GeofenceMapView: View {
 
             // 🔹 Show the real-time drawing while dragging
             if isDrawing {
-                DrawnPathView(coordinates: drawnCoordinates)
+                DrawnPathView(coordinates: drawnCoordinates, region: $locationManager.region, isCompleted: false)
             }
 
             // 🔹 Display all completed geofences with a faint fill
             ForEach(locationManager.geofences, id: \.self) { polygon in
-                DrawnPathView(coordinates: polygon)
+                DrawnPathView(coordinates: polygon, region: $locationManager.region, isCompleted: true)
                     .overlay(
                         PolygonShape(coordinates: polygon)
                             .fill(Color.blue.opacity(0.3))
@@ -45,6 +45,25 @@ struct GeofenceMapView: View {
 
             VStack {
                 Spacer()
+                HStack {
+                    Button(action: { zoomIn() }) {
+                        Image(systemName: "plus.magnifyingglass")
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                    }
+
+                    Button(action: { zoomOut() }) {
+                        Image(systemName: "minus.magnifyingglass")
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                    }
+                }
+                .padding()
+                
                 Button(action: { isDrawing.toggle() }) {
                     Text(isDrawing ? "Stop Drawing" : "Draw Geofence")
                         .padding()
@@ -64,5 +83,15 @@ struct GeofenceMapView: View {
                 showAlert = true
             }
         }
+    }
+    
+    private func zoomIn() {
+        locationManager.region.span = MKCoordinateSpan(latitudeDelta: locationManager.region.span.latitudeDelta / 2,
+                                                       longitudeDelta: locationManager.region.span.longitudeDelta / 2)
+    }
+
+    private func zoomOut() {
+        locationManager.region.span = MKCoordinateSpan(latitudeDelta: locationManager.region.span.latitudeDelta * 2,
+                                                       longitudeDelta: locationManager.region.span.longitudeDelta * 2)
     }
 }
