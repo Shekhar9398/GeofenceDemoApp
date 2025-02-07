@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4ADD8682D55E24C006B7CEA /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADD8672D55E24C006B7CEA /* CLLocationCoordinate2D.swift */; };
+		F4ADD86A2D55E57C006B7CEA /* PolygonShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADD8692D55E57C006B7CEA /* PolygonShape.swift */; };
 		F4C89C722D54FCE900A89BC1 /* MapAnnotationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C89C712D54FCE900A89BC1 /* MapAnnotationItem.swift */; };
 		F4C89C752D5502A400A89BC1 /* DrawnPathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C89C742D5502A400A89BC1 /* DrawnPathView.swift */; };
 		F4C89C772D5502BF00A89BC1 /* MapViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C89C762D5502BF00A89BC1 /* MapViewWrapper.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F4ADD8672D55E24C006B7CEA /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
+		F4ADD8692D55E57C006B7CEA /* PolygonShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonShape.swift; sourceTree = "<group>"; };
 		F4C89C712D54FCE900A89BC1 /* MapAnnotationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotationItem.swift; sourceTree = "<group>"; };
 		F4C89C732D54FF4200A89BC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F4C89C742D5502A400A89BC1 /* DrawnPathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawnPathView.swift; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 				F4C89C712D54FCE900A89BC1 /* MapAnnotationItem.swift */,
 				F4C89C742D5502A400A89BC1 /* DrawnPathView.swift */,
 				F4C89C762D5502BF00A89BC1 /* MapViewWrapper.swift */,
+				F4ADD8672D55E24C006B7CEA /* CLLocationCoordinate2D.swift */,
+				F4ADD8692D55E57C006B7CEA /* PolygonShape.swift */,
 			);
 			path = GeofenceDemoApp;
 			sourceTree = "<group>";
@@ -167,7 +173,9 @@
 				F4C89C772D5502BF00A89BC1 /* MapViewWrapper.swift in Sources */,
 				F4D786F42D54CAC5009F2C5D /* ContentView.swift in Sources */,
 				F4D7870E2D54EC9D009F2C5D /* GeofenceMapView.swift in Sources */,
+				F4ADD8682D55E24C006B7CEA /* CLLocationCoordinate2D.swift in Sources */,
 				F4D7870C2D54EBC5009F2C5D /* LocationManager.swift in Sources */,
+				F4ADD86A2D55E57C006B7CEA /* PolygonShape.swift in Sources */,
 				F4D786F22D54CAC5009F2C5D /* GeofenceDemoAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

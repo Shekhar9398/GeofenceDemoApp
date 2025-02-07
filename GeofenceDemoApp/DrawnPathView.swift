@@ -7,7 +7,7 @@ struct DrawnPathView: View {
     var body: some View {
         GeometryReader { geometry in
             Path { path in
-                guard !coordinates.isEmpty else { return }
+                guard coordinates.count > 1 else { return }
                 
                 let start = convertToScreenPoint(from: coordinates.first!, in: geometry)
                 path.move(to: start)
@@ -17,17 +17,17 @@ struct DrawnPathView: View {
                     path.addLine(to: nextPoint)
                 }
             }
-            .stroke(Color.blue, lineWidth: 2)
+            .stroke(Color.blue, lineWidth: 2) // ✅ Now stroke works properly
         }
     }
-    
+
     private func convertToScreenPoint(from coordinate: CLLocationCoordinate2D, in geometry: GeometryProxy) -> CGPoint {
         let latOffset = coordinate.latitude - 37.7749
         let lonOffset = coordinate.longitude - (-122.4194)
-        
+
         let x = (lonOffset * 5000) + geometry.size.width / 2
         let y = (latOffset * -5000) + geometry.size.height / 2
-        
+
         return CGPoint(x: x, y: y)
     }
 }
